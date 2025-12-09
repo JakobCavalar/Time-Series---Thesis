@@ -555,28 +555,3 @@ end_time <- Sys.time()
 time_taken <- end_time - start_time
 print(time_taken)
 
-# Alter Kram -----
-Summe_quadrierter_Revisisonen(Daten = ts, Bereich_Untergrenze = 52,
-                              Bereich_Obergrenze = 62, Methode = x13, frequenz = 12, Output = "SQR_X")
-
-Summe_quadrierter_Revisisonen(Daten = ts, Bereich_Untergrenze = 52,
-                              Bereich_Obergrenze = 62, Methode = BV4.1, frequenz = 12, Output = "SQR_BV")
-
-Revisions_Plot(Daten = ts_data, Methode = x13, Untergrenze = 55, Obergrenze = 75,
-               Sprünge = 4, frequenz = 12, Plot_out = "Rev_Plot_X11")
-
-
-Revisions_Plot(Daten = ts_data, Methode = BV4.1, Untergrenze = 55, Obergrenze = 75,
-               Sprünge = 4, frequenz = 12, Plot_out = "Rev_Plot_BV")
-
-Treffsicherheit_j(Daten = Beschäftigte, Bereich_Untergrenze = 62, Bereich_Obergrenze = 73, Methode = X13ARIMA,
-                  Variable_Zeitreihe = "X_t", Variable_Datum = "date", Variable_Trend = "trend", Frequenz = 12,
-                  Anteil = 1, Verschärfung = 0.5, Output = "Treff_jx13")
-
-Treffsicherheit_g(Daten = Beschäftigte, Bereich_Untergrenze = 62, Bereich_Obergrenze = 73, Methode = X13ARIMA,
-                  Variable_Zeitreihe = "X_t", Variable_Datum = "date", Variable_Trend = "trend", Frequenz = 12,
-                  Anteil = 1,Verschärfung = 0.5, Output = "Treff_gx13")
-
-Revisions_Plot(Daten = Beschäftigte, Methode = X13ARIMA, Untergrenze = 73, Obergrenze = 84, Sprünge = 4,
-               Variable_Zeitreihe = "X_t", Variable_Datum = "date", Variable_Trend = "trend",
-               Frequenz = 12)
