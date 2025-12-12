@@ -275,7 +275,7 @@ Treffsicherheit_j<- function(Daten, Bereich_Untergrenze, Bereich_Obergrenze, Met
       Entwicklung_Schaetzung_J[idx] <- Modell_Treff@decomp[,"Trend"][i] -
         Modell_Treff@decomp[,"Trend"][i-1]
     }
-    Entwicklung_Wahr[idx] <- Daten[["X_t"]][i] - Daten[["X_t"]][i-1]
+    Entwicklung_Wahr[idx] <- Daten[["trend"]][i] - Daten[["trend"]][i-1]
     
     if ((Entwicklung_Wahr[idx] >= 0 & Entwicklung_Schaetzung_J[idx] >= 0) |
         (Entwicklung_Wahr[idx] < 0 & Entwicklung_Schaetzung_J[idx] < 0)){
@@ -449,6 +449,7 @@ S9 <- Simulation(obs = 84, frequency = 12, trend_slope = 0.1,
                  shift_prob = 0, shift_magnitude = 0,
                  seed = 1, polynomgrad = 1 ,AR = c(0.4,0.2), MA = -0.1,
                  trend_offset = 4, trend_konj = 0, Noise = "GARCH")
+
 
 
 
