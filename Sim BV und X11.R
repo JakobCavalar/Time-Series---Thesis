@@ -412,7 +412,23 @@ Treffsicherheit_j<- function(Daten, Bereich_Untergrenze, Bereich_Obergrenze, Met
   Treffsicherheit_J <- mean(Trend_Konjunktur_Entwicklung_J)
   assign(Output, Treffsicherheit_J, envir = .GlobalEnv)
 }
-
+Varianz_Verlauf <- function(Objekt1, Objekt2, Titel, Komponente){
+  var_1 <- rowVars(Objekt1)
+  var_2 <- rowVars(Objekt2)
+  time <- c(1:84)
+  
+  ggplot() +
+    geom_line(aes(x = time, y = var_1, color = "BV4.1"), linewidth = 1.2, alpha = 0.8) +
+    geom_line(aes(x = time, y = var_2, color = "X-13-ARIMA"), linewidth = 1.2, alpha = 0.8) +
+    labs(title = Titel,
+         y = paste0("Varianz der ", Komponente, "-Schätzung"),
+         x = "Beobachtung") +
+    theme_minimal(base_size = 13) +
+    scale_color_manual(name = "Modell", 
+                       values = c("BV4.1" = "maroon1", "X-13-ARIMA" = "dodgerblue"),
+                       labels = c("BV4.1", "X-13-ARIMA")) +
+    scale_y_continuous()
+}
 # Simulation ---------
 Simulation <- function(iterations = 2, obs = 84, frequency = 12, trend_slope = 0.02,
                        trend_amplitude = 0, season_amplitude1 = 0.5,
@@ -554,4 +570,5 @@ Simulation(iterations = 2, obs = 84, frequency = 12, trend_slope = 0.02,
 end_time <- Sys.time()  
 time_taken <- end_time - start_time
 print(time_taken)
+
 
