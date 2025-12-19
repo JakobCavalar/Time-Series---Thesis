@@ -5,6 +5,8 @@ This Repository is storing the Code I have used to create simulations plots and 
 
 The Code was just copied and pasted into this repository, so dont expect everything to run without making minor adjustments. Especially to the simulations itself since it has been done on a univerity server and therefore needed to be adapted for this. Therefore I have included a file that I did not use but does the same simulation on your local device.
 
+The Script: VerbraucherpreisindexDE is using BV4.1 and X-13-ARIMA to decompose the german consumer price index into trend, seasonal and random components
+
 The Scripts: ARIMA, LWR, Polynomgrade Plot, Signalextraktion and Bandbreite just show the different Methods using changing parameterization to estimate the Trend-component
 
 The Script - Einlesen BV4.1 helps if you work with the software programm BV4.1 and not the deseats package in R. It can automatically extract results of the BV4.1 xlsx result files
@@ -17,4 +19,4 @@ The Script - Sim BV und X11 contains most of the important function such as the 
 
 The Script - Maßgrößen Verlaufsplot plots the chnage of the Qualitymeasures over different scenarios
 
-Lastly, the Script - Server Code has the most recent version of the important functions and starts the simulation on the university server. Below the parameterization of all the 9 scenarios can be found.
+Lastly, the Script - Server Code has the most recent version of the important functions and starts the simulation on the universities server. Below the parameterization of all the 9 scenarios can be found.
